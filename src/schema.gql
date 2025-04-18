@@ -1,0 +1,115 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Approval_03753c8f {
+  blockNumber: Int!
+  blockTimestamp: String!
+  eventOriginAddress: String!
+  guy: String!
+  logData: String
+  logIndex: Int!
+  src: String!
+  topics: [String!]
+  transactionHash: String!
+  txIndex: Int!
+  uniqueEventId: ID!
+  wad: String!
+}
+
+type BlockIndex {
+  blockNumber: Int!
+  id: Int!
+  processedAt: DateTime!
+}
+
+type BlockchainEvent {
+  blockHash: String!
+  blockNumber: Int!
+  blockTimestamp: String!
+  createdDate: String!
+  eventOriginAddress: String!
+  logData: String!
+  logIndex: Int!
+  topics: [String!]!
+  transactionHash: String!
+  txIndex: Int!
+  uniqueEventId: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Deposit_a9ebf685 {
+  blockNumber: Int!
+  blockTimestamp: String!
+  dst: String!
+  eventOriginAddress: String!
+  logData: String
+  logIndex: Int!
+  topics: [String!]
+  transactionHash: String!
+  txIndex: Int!
+  uniqueEventId: ID!
+  wad: String!
+}
+
+input EventFilterInput {
+  blockNumber: Int
+  eventOriginAddress: String
+  transactionHash: String
+  uniqueEventId: String
+}
+
+type GasPrice {
+  createdAt: String!
+  gasPrice: Int!
+  id: String!
+}
+
+type Query {
+  Approval_03753c8f(filter: EventFilterInput, limit: Int! = 10, offset: Int! = 0): [Approval_03753c8f!]!
+  Approval_03753c8fById(id: String!): Approval_03753c8f!
+  BlockchainEvent(limit: Int! = 10, offset: Int! = 0): [BlockchainEvent!]!
+  Deposit_a9ebf685(filter: EventFilterInput, limit: Int! = 10, offset: Int! = 0): [Deposit_a9ebf685!]!
+  Deposit_a9ebf685ById(id: String!): Deposit_a9ebf685!
+  GasPrice(limit: Int! = 10, offset: Int! = 0): [GasPrice!]!
+  Transfer_fab013d9(filter: EventFilterInput, limit: Int! = 10, offset: Int! = 0): [Transfer_fab013d9!]!
+  Transfer_fab013d9ById(id: String!): Transfer_fab013d9!
+  Withdrawal_c0605588(filter: EventFilterInput, limit: Int! = 10, offset: Int! = 0): [Withdrawal_c0605588!]!
+  Withdrawal_c0605588ById(id: String!): Withdrawal_c0605588!
+  block(blockNumber: Int!): BlockIndex
+  blocks(limit: Int, offset: Int): [BlockIndex!]!
+  latestBlock: BlockIndex
+}
+
+type Transfer_fab013d9 {
+  blockNumber: Int!
+  blockTimestamp: String!
+  dst: String!
+  eventOriginAddress: String!
+  logData: String
+  logIndex: Int!
+  src: String!
+  topics: [String!]
+  transactionHash: String!
+  txIndex: Int!
+  uniqueEventId: ID!
+  wad: String!
+}
+
+type Withdrawal_c0605588 {
+  blockNumber: Int!
+  blockTimestamp: String!
+  eventOriginAddress: String!
+  logData: String
+  logIndex: Int!
+  src: String!
+  topics: [String!]
+  transactionHash: String!
+  txIndex: Int!
+  uniqueEventId: ID!
+  wad: String!
+}
