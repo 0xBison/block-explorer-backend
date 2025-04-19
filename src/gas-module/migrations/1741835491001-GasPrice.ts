@@ -2,8 +2,6 @@ import { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class GasPriceMigration1741835491001 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
-    console.log('SQL_SCHEMA', process.env.SQL_SCHEMA);
-
     // Create schema if it doesn't exist
     await queryRunner.query(
       `CREATE SCHEMA IF NOT EXISTS "${process.env.SQL_SCHEMA}"`,

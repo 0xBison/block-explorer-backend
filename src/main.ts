@@ -13,7 +13,10 @@ async function bootstrap() {
   });
 
   // Enable CORS
-  app.enableCors();
+  app.enableCors({
+    origin: '*',
+    methods: '*',
+  });
 
   const metricsApp = await NestFactory.create(
     PrometheusModule.register({ path: '/metrics' }),
